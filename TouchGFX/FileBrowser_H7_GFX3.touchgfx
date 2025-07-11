@@ -1,0 +1,1075 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "FileBrowser",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "PathBar",
+            "Width": 1024,
+            "Height": 60,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "image1",
+                "X": 112,
+                "Y": 3,
+                "Width": 910,
+                "Height": 51,
+                "RelativeFilename": "bar.png"
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "btnBack",
+                "Width": 60,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 5,
+                    "Y": 6,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_arrow_back_50_50_00FFBB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_navigation_arrow_back_50_50_1900FF.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "Round_Edge_icon_button.png",
+                    "ImagePressed": "Round_Edge_icon_button_pressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "btnHome",
+                "X": 54,
+                "Width": 60,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 5,
+                    "Y": 5,
+                    "IconReleased": "home.png",
+                    "IconPressed": "home.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "Round_Edge_icon_button.png",
+                    "ImagePressed": "Round_Edge_icon_button_pressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "txtPath",
+                "X": 114,
+                "Y": 14,
+                "Width": 881,
+                "Height": 24,
+                "TextId": "__SingleUse_HSC7",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 255,
+                  "Blue": 187
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 100
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollFileList",
+            "Y": 60,
+            "Width": 1024,
+            "Height": 540,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisible": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsColor": {
+              "Green": 255,
+              "Blue": 187
+            },
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "ListLayout",
+                "Name": "list",
+                "Y": -60,
+                "Width": 250,
+                "Height": 250,
+                "Direction": "East",
+                "Components": []
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnNewFolder",
+            "X": 362,
+            "Y": 540,
+            "Width": 60,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "Y": 10,
+                "IconReleased": "folderaddd.png",
+                "IconPressed": "folderaddd.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "Round_Edge_icon_button.png",
+                "ImagePressed": "Round_Edge_icon_button_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnNewFile",
+            "X": 422,
+            "Y": 540,
+            "Width": 60,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "Y": 10,
+                "IconReleased": "fileadddd.png",
+                "IconPressed": "fileadddd.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "Round_Edge_icon_button.png",
+                "ImagePressed": "Round_Edge_icon_button_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnRename",
+            "X": 482,
+            "Y": 540,
+            "Width": 60,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "Y": 10,
+                "IconReleased": "__generated\\icon_theme_images_file_drive_file_rename_outline_40_40_00FFBB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_file_drive_file_rename_outline_40_40_0015FF.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "Round_Edge_icon_button.png",
+                "ImagePressed": "Round_Edge_icon_button_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnDelete",
+            "X": 542,
+            "Y": 540,
+            "Width": 60,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 10,
+                "Y": 10,
+                "IconReleased": "__generated\\icon_theme_images_action_delete_forever_40_40_00FFBB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_delete_forever_40_40_0519FA.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "Round_Edge_icon_button.png",
+                "ImagePressed": "Round_Edge_icon_button_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnFormat",
+            "X": 602,
+            "Y": 540,
+            "Width": 60,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 18,
+                "Y": 14,
+                "IconReleased": "sd.png",
+                "IconPressed": "sd.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "Round_Edge_icon_button.png",
+                "ImagePressed": "Round_Edge_icon_button_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "progressStorage",
+            "X": 417,
+            "Y": 205,
+            "Width": 190,
+            "Height": 190,
+            "Visible": false,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 95.0,
+            "CenterY": 95.0,
+            "Radius": 85.0,
+            "LineWidth": 20.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "Preset": "alternate_theme\\presets\\circleprogress\\action_large.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_circleprogress_backgrounds_large.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtStorageInfo",
+            "X": 618,
+            "Y": 265,
+            "Width": 377,
+            "Height": 71,
+            "TextId": "__SingleUse_6842",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            },
+            "WideTextAction": 4
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "handleHomeClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnHome"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleHomeClicked"
+            }
+          },
+          {
+            "InteractionName": "handleBackClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnBack"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleBackClicked"
+            }
+          },
+          {
+            "InteractionName": "handleNewFolderClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnNewFolder"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleNewFolderClicked"
+            }
+          },
+          {
+            "InteractionName": "handleNewFileClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnNewFile"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleNewFileClicked"
+            }
+          },
+          {
+            "InteractionName": "handleRenameClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnRename"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleRenameClicked"
+            }
+          },
+          {
+            "InteractionName": "handleDeleteClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnDelete"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleDeleteClicked"
+            }
+          },
+          {
+            "InteractionName": "handleFormatClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnFormat"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleFormatClicked"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CustomKeyboard",
+        "Width": 320,
+        "Height": 240,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 320,
+            "Height": 240,
+            "RelativeFilename": "keyboard_background.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "capslock",
+            "X": 5,
+            "Y": 150,
+            "Width": 56,
+            "Height": 40,
+            "Visible": false,
+            "LockPosition": true,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "keyboard_key_shift_highlighted.png",
+                "ImagePressed": "keyboard_key_shift_highlighted.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "mode",
+            "X": 5,
+            "Y": 193,
+            "Width": 56,
+            "Height": 40,
+            "Visible": false,
+            "LockPosition": true,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "keyboard_key_num_highlighted.png",
+                "ImagePressed": "keyboard_key_num_highlighted.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "backspace",
+            "X": 258,
+            "Y": 150,
+            "Width": 56,
+            "Height": 40,
+            "Visible": false,
+            "LockPosition": true,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle",
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "keyboard_key_delete_highlighted.png",
+                "ImagePressed": "keyboard_key_delete_highlighted.png"
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "buffer",
+            "X": 12,
+            "Y": 17,
+            "Width": 296,
+            "Height": 25,
+            "LockPosition": true,
+            "TextId": "__SingleUse_8CNS",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 18
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "capslockPressedHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "capslock"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "capslockPressedHandler"
+            }
+          },
+          {
+            "InteractionName": "modePressedHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "mode"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "modePressedHandler"
+            }
+          },
+          {
+            "InteractionName": "backspacePressedHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backspace"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "backspacePressedHandler"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "FileListItem",
+        "Width": 1024,
+        "Height": 50,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "name",
+            "X": 85,
+            "Y": 13,
+            "Width": 830,
+            "Height": 25,
+            "TextId": "__SingleUse_XYHE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "Wildcard2": {
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "WideTextAction": 4
+          },
+          {
+            "Type": "Image",
+            "Name": "icon",
+            "X": 19,
+            "Y": 5,
+            "Width": 30,
+            "Height": 41,
+            "RelativeFilename": "fileee.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "TextInputPopup",
+        "Width": 1024,
+        "Height": 600,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "Clickable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "popupBox",
+            "X": 40,
+            "Y": 30,
+            "Width": 400,
+            "Height": 212,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "inputText",
+            "X": 50,
+            "Y": 80,
+            "Width": 380,
+            "Height": 40,
+            "LockPosition": true,
+            "TextId": "__SingleUse_4OV4",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            },
+            "WideTextAction": 4
+          },
+          {
+            "Type": "TextArea",
+            "Name": "titleText",
+            "X": 50,
+            "Y": 40,
+            "Width": 380,
+            "Height": 30,
+            "LockPosition": true,
+            "TextId": "__SingleUse_AFGW",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "backgroundClick",
+            "Width": 480,
+            "Height": 272,
+            "LockPosition": true,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 480,
+                "Height": 272,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonCancel",
+            "X": 300,
+            "Y": 512,
+            "Width": 100,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 7,
+                "TextId": "__SingleUse_EFYE",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 252
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonOk",
+            "X": 80,
+            "Y": 512,
+            "Width": 100,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 7,
+                "TextId": "__SingleUse_E8WO",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 252
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "customKeyboard",
+            "X": 80,
+            "Y": 272,
+            "Width": 320,
+            "Height": 240,
+            "CustomContainerDefinitionName": "CustomKeyboard"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "handleOkClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonOk"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleOkClicked"
+            }
+          },
+          {
+            "InteractionName": "handleCancelClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleCancelClicked"
+            }
+          },
+          {
+            "InteractionName": "handleBackgroundClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backgroundClick"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleBackgroundClicked"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ConfirmPopup",
+        "Width": 480,
+        "Height": 272,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "Clickable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "popupBox",
+            "X": 50,
+            "Y": 70,
+            "Width": 380,
+            "Height": 132,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "messageText",
+            "X": 70,
+            "Y": 90,
+            "Width": 340,
+            "Height": 60,
+            "TextId": "__SingleUse_C0SO",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            },
+            "WideTextAction": 4
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "backgroundClick",
+            "Width": 480,
+            "Height": 272,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 480,
+                "Height": 272,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnYes",
+            "X": 111,
+            "Y": 202,
+            "Width": 100,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 5,
+                "TextId": "__SingleUse_CBIN",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "btnNo",
+            "X": 270,
+            "Y": 202,
+            "Width": 100,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 5,
+                "TextId": "__SingleUse_TJWQ",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 252
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "handleYesClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnYes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleYesClicked"
+            }
+          },
+          {
+            "InteractionName": "handleNoClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnNo"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleNoClicked"
+            }
+          },
+          {
+            "InteractionName": "handleBackgroundClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backgroundClick"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "handleBackgroundClicked"
+            }
+          }
+        ]
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 1024,
+      "Height": 600
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "FileBrowser",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 1024,
+        "Height": 600
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H743/753",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../FileBrowser_H7_GFX3.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts",
+      "Video"
+    ]
+  },
+  "Version": "4.25.0"
+}
